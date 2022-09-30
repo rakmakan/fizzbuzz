@@ -9,11 +9,8 @@ headers = {"Authorization": f"Bearer {API_TOKEN}"}
 app = Flask(__name__)
 
 
-@app.route('/predict', methods=["POST"])
+@app.route('/', methods=["GET", "POST"])
 def index():
-    input_json = request.get_json(force=True)
-    print('input_json')
-
     text = request.args.get("text")
     print(text)
     output = query({
@@ -21,6 +18,14 @@ def index():
         })
     return output
 
+@app.route('/predict', methods=["POST"])
+def predict():
+    text = request.form['text']
+    print(text)
+    output = query({
+        "inputs": str(text)
+    })
+    return output
 
 def query(payload):
     response = requests.post(API_URL, headers=headers, json=payload)
@@ -28,4 +33,4 @@ def query(payload):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000)
+    app.run(host='0.0.0.0', port=8002)
