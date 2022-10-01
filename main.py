@@ -18,6 +18,7 @@ def index():
         })
     return output
 
+
 @app.route('/predict', methods=["POST"])
 def predict():
     text = request.form['text']
@@ -26,6 +27,7 @@ def predict():
         "inputs": str(text)
     })
     return output
+
 
 def query(payload):
     response = requests.post(API_URL, headers=headers, json=payload)
