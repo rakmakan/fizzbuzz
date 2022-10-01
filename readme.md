@@ -1,4 +1,4 @@
-# Task 1
+# Task 2
 In this work, I have created a sentiment classifier using the [transformer model](https://huggingface.co/aychang/roberta-base-imdb) (RoBERTa) 
 pretrained on the [IMDB dataset](https://huggingface.co/datasets/imdb). I am using the hugging face [inference API](https://huggingface.co/docs/api-inference/detailed_parameters) to 
 request the pretrained model to return the sentiment on the input text. 
