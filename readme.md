@@ -5,7 +5,9 @@ request the pretrained model to return the sentiment on the input text.
 
 
 ## Reason for using the model:
-I have chose this model as this have the highest accuracy among the other finetuned models.
+I have chose this model as this have the highest accuracy and f1-score among the other finetuned models.
+The doumentation did not provide the loss and numbr of epoch they have used for training. I have tried other model such as
+https://huggingface.co/aychang/roberta-base-imdb but results where not satisfactory.
 
 |              | precision  |  recall   |  f1-score  | support |
 |:------------:|:----------:|:---------:|:----------:|:-------:|
