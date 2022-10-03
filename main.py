@@ -2,7 +2,7 @@ from flask import Flask
 import requests
 from flask import request
 
-API_URL = "https://api-inference.huggingface.co/models/aychang/roberta-base-imdb"
+API_URL = "https://api-inference.huggingface.co/models/mrm8488/t5-base-finetuned-imdb-sentiment"
 API_TOKEN = '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'
 headers = {"Authorization": f"Bearer {API_TOKEN}"}
 

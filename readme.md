@@ -1,8 +1,20 @@
 # Task 2
-In this work, I have created a sentiment classifier using the [transformer model](https://huggingface.co/aychang/roberta-base-imdb) (RoBERTa) 
+In this work, I have created a sentiment classifier using the [transformer model](https://huggingface.co/mrm8488/t5-base-finetuned-imdb-sentiment) (T5) 
 pretrained on the [IMDB dataset](https://huggingface.co/datasets/imdb). I am using the hugging face [inference API](https://huggingface.co/docs/api-inference/detailed_parameters) to 
 request the pretrained model to return the sentiment on the input text. 
 
+
+## Reason for using the model:
+I have chose this model as this have the highest accuracy among the other finetuned models.
+
+|              | precision  |  recall   |  f1-score  | support |
+|:------------:|:----------:|:---------:|:----------:|:-------:|
+|   negative   |    0.95    |   0.95    |    0.95    |  12500  |
+|   positive   |    0.95    |   0.95    |    0.95    |  12500  |
+|  ----------  | ---------- | --------- | ---------- | ------- |
+|   accuracy   |            |           |    0.95    |  25000  |
+|  macro avg   |    0.95    |   0.95    |    0.95    |  25000  |
+| weighted avg |    0.95    |   0.95    |    0.95    |  25000  |
 
 
 # Follow the step to run the code:
@@ -19,7 +31,7 @@ request the pretrained model to return the sentiment on the input text.
    sudo docker run -p 5000:8000 rakshitmakan/lemai 
        </code>
    
-## Requesting the docker to get a sentiment of a movie revie
+## Requesting the docker to get a sentiment of a movie review
 ### method 1: Using the curl form the terminal 
   <code>
     curl --location --request POST 'http://0.0.0.0:4000/predict' \
